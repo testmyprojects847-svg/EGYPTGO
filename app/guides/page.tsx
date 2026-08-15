@@ -4,13 +4,14 @@ import { useState } from 'react'
 import { Search, Users } from 'lucide-react'
 import { PageHeader } from '@/components/layout/PageHeader'
 import { GuideCard } from '@/components/guides/GuideCard'
-import { guides } from '@/data/guides'
+import { useGuides } from '@/hooks/useGuides'
 import { useLanguage } from '@/hooks/useLanguage'
 
 export default function GuidesPage() {
   const { t, dir, locale } = useLanguage()
   const [query, setQuery] = useState('')
   const [city, setCity] = useState('All')
+  const { guides } = useGuides()
 
   const visible = guides.filter(
     (guide) =>

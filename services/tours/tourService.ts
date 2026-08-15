@@ -11,6 +11,11 @@ export const tourService = {
   listPublished(): Tour[] {
     return tourService.list().filter((tour) => tour.published !== false)
   },
+  listFeatured(): Tour[] {
+    const published = tourService.listPublished()
+    const featured = published.filter((tour) => tour.featured === true)
+    return featured.length ? featured : published.slice(0, 6)
+  },
   getById(id: string): Tour | undefined {
     return tourService.list().find((tour) => tour.id === id)
   },

@@ -8,6 +8,9 @@ export const guideService = {
   list(): Guide[] {
     return storageService.get<Guide[]>(STORAGE_KEYS.adminGuides, seedGuides)
   },
+  listPublic(): Guide[] {
+    return guideService.list().filter((guide) => guide.active !== false && guide.availability !== false)
+  },
   save(draft: Partial<Guide> & { name: string }, editingId?: string): Guide[] {
     const current = guideService.list()
     const next: Guide = {
@@ -26,6 +29,7 @@ export const guideService = {
       bioAr: draft.bioAr || '',
       availability: draft.availability ?? true,
       assignedTours: draft.assignedTours ?? 0,
+      active: draft.active ?? true,
     }
     const updated = editingId ? current.map((guide) => (guide.id === editingId ? next : guide)) : [...current, next]
     storageService.set(STORAGE_KEYS.adminGuides, updated)

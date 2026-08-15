@@ -10,6 +10,8 @@ import { routes } from '@/lib/routes'
 export function FeaturedTours() {
   const { t, isRtl } = useLanguage()
   const { results, query, setQuery } = useTours()
+  const featuredTours = results.filter((tour) => tour.featured === true)
+  const displayTours = (featuredTours.length ? featuredTours : results).slice(0, 6)
 
   return (
     <section className="mx-4 mb-20 mt-10 lg:mx-10">
@@ -28,7 +30,7 @@ export function FeaturedTours() {
           className="w-full bg-transparent text-sm outline-none"
         />
       </div>
-      <TourGrid tours={results.slice(0, 6)} />
+      <TourGrid tours={displayTours} />
     </section>
   )
 }

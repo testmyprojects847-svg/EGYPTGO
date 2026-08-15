@@ -9,6 +9,7 @@ export const STORAGE_KEYS = {
   notifications: 'egyptgo_notifications',
   adminTours: 'egyptgo_admin_tours',
   adminGuides: 'egyptgo_admin_guides',
+  adminSettings: 'egyptgo_admin_settings',
   adminReviews: 'egyptgo_admin_reviews',
   schemaVersion: 'egyptgo_schema_version',
 } as const

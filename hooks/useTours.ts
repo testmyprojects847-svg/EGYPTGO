@@ -1,6 +1,8 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { subscribeToStorageChanges } from '@/services/storage/storageService'
+import { STORAGE_KEYS } from '@/services/storage/storageKeys'
 import { tourService } from '@/services/tours/tourService'
 import { useLanguage } from './useLanguage'
 import type { Tour } from '@/types'
@@ -14,6 +16,9 @@ export function useTours(initial: Tour[] = []) {
   useEffect(() => {
     setTours(tourService.list())
     setIsReady(true)
+    return subscribeToStorageChanges((key) => {
+      if (key === STORAGE_KEYS.adminTours) setTours(tourService.list())
+    })
   }, [])
 
   const refresh = useCallback((next?: Tour[]) => setTours(next ?? tourService.list()), [])

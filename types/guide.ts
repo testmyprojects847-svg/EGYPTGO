@@ -14,4 +14,5 @@ export interface Guide {
   bioAr?: string
   availability?: boolean
   assignedTours?: number
+  active?: boolean
 }
