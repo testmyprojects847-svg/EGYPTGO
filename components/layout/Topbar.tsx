@@ -41,8 +41,8 @@ export function Topbar() {
           </>
         ) : (
           <>
-            <Link href={role === 'admin' ? routes.admin : routes.dashboard} className="hidden text-xs font-medium sm:block">
-              {role === 'admin' ? t('adminDashboard') : t('myProfile')}
+            <Link href={routes.dashboard} className="hidden text-xs font-medium sm:block">
+              {t('myProfile')}
             </Link>
             <button
               type="button"

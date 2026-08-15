@@ -22,8 +22,8 @@ export function Hero() {
         </h1>
         <p className="mt-5 max-w-md text-sm leading-6 text-white/80">
           {locale === 'ar'
-            ? 'اكتشف أفضل الجولات والفنادق والتجارب - ثم احجز رحلتك التالية بثقة.'
-            : 'Find the best tours, hotels and experiences — then book your next journey.'}
+            ? 'اكتشف أفضل الجولات والتجارب - ثم احجز رحلتك التالية بثقة.'
+            : 'Find the best tours and experiences — then book your next journey.'}
         </p>
         <Link href={routes.tours} className="mt-8 w-fit rounded-xl bg-white px-6 py-3 text-sm font-bold text-primary hover:bg-white/90">
           {t('exploreMore')}

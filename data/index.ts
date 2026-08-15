@@ -1,6 +1,5 @@
 export * from './tours'
 export * from './destinations'
-export * from './hotels'
 export * from './guides'
 export * from './users'
 export * from './bookings'

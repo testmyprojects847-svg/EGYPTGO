@@ -21,7 +21,6 @@ const defaults: AdminSettings = {
     { id: 'tours', label: 'Tours', labelAr: 'الجولات', href: '/tours', visible: true, order: 1 },
     { id: 'destinations', label: 'Destinations', labelAr: 'الوجهات', href: '/destinations', visible: true, order: 2 },
     { id: 'guides', label: 'Guides', labelAr: 'المرشدون', href: '/guides', visible: true, order: 3 },
-    { id: 'hotels', label: 'Hotels', labelAr: 'الفنادق', href: '/hotels', visible: true, order: 4 },
   ],
 }
 

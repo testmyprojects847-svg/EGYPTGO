@@ -14,7 +14,6 @@ export function Footer() {
         <div className="flex flex-wrap gap-4">
           <Link href={routes.about}>{t('about')}</Link>
           <Link href={routes.contact}>{t('contact')}</Link>
-          <Link href={routes.adminSignIn}>{t('adminDashboard')}</Link>
         </div>
         <p>
           {SUPPORT_EMAIL} · {SUPPORT_PHONE}

@@ -1,10 +1,10 @@
 'use client'
 
-import { BarChart3, BookOpen, Building2, CalendarCheck, CreditCard, FileText, Globe2, LayoutDashboard, LogOut, Map, Settings, Shield, Users, UserRound, X } from 'lucide-react'
+import { BookOpen, CalendarCheck, FileText, Globe2, LayoutDashboard, LogOut, Map, Settings, Shield, Users, UserRound, X } from 'lucide-react'
 import { useLanguage } from '@/hooks/useLanguage'
 
 const items = [
-  ['dashboard', LayoutDashboard], ['tours', BookOpen], ['destinations', Map], ['hotels', Building2], ['bookings', CalendarCheck], ['users', Users], ['guides', UserRound], ['reviews', FileText], ['payments', CreditCard], ['settings', Settings],
+  ['dashboard', LayoutDashboard], ['tours', BookOpen], ['destinations', Map], ['bookings', CalendarCheck], ['users', Users], ['guides', UserRound], ['reviews', FileText], ['settings', Settings],
 ] as const
 
 export function AdminSidebar({ active, onChange, open, onClose }: { active: string; onChange: (key: string) => void; open: boolean; onClose: () => void }) {
