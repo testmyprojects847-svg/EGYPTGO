@@ -10,4 +10,8 @@ export interface Guide {
   price: number
   image: string
   verified: boolean
+  bio?: string
+  bioAr?: string
+  availability?: boolean
+  assignedTours?: number
 }
